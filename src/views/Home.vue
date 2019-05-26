@@ -1,7 +1,7 @@
 <template>
   <div class="Home">
     <div class="container">
-      <div class="row d-md-block d-none">
+      <div class="row d-sm-block d-none">
         <div class="col-12 Home__coming-soon-column">
           <h2 class="Home__coming-soon-title">Coming soon...Bobalicious</h2>
         </div>
@@ -13,11 +13,11 @@
             <b-form-input v-model="text" class="Home__input--email" placeholder="Enter your email address"></b-form-input>
             <b-button class="Home__submit-btn" type="submit">SIGN UP FOR BETA</b-button>
           </b-form>
-          <p class="d-md-block d-none Home__call-to-content">Waiting in long queues has never been easier! Order through this app and pick up your drink on arrival!</p>
+          <p class="d-sm-block d-none Home__call-to-content">Waiting in long queues has never been easier! Order through this app and pick up your drink on arrival!</p>
         </div>
       </div>
-      <div class="row d-md-block d-none">
-        <div class="col-md-4">
+      <div class="row d-sm-block d-none">
+        <div class="col-sm-4">
             <b-card
               title="Fast pick up"
               img-src="https://picsum.photos/600/300/?image=25"
@@ -32,7 +32,7 @@
               <b-button href="#" variant="primary">Go somewhere</b-button>
             </b-card>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <div>
           <b-card
             title="Free to use"
@@ -49,7 +49,7 @@
           </b-card>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <b-card
             title="Safe, secure payment"
             img-src="https://picsum.photos/600/300/?image=25"
@@ -70,7 +70,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'home',
@@ -81,17 +80,22 @@ export default {
 
 <style lang="scss" scoped>
   .Home {
-    margin-top: 50%;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)),
+      url('../assets/background-tea.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 100vh;
   }
 
-  .Home__submit-btn {
-    margin-top: 8px;
-    width: 100%;
+  .Home__call-to-action, .Home__coming-soon-title {
+    color: #FFF;
   }
 
   .Home__call-to-action {
     letter-spacing: 1.16px;
-    margin-top: 32px;
     text-align: center;
     font-weight: 700;
   }
@@ -102,13 +106,10 @@ export default {
   }
 
   .Home__submit-btn {
-    letter-spacing: 0.88px;
     font-weight: 500;
-  }
-
-// > MD devices
-  .Home__call-to-action-column {
-    margin-top: 48px;
+    letter-spacing: 0.88px;
+    margin-top: 8px;
+    width: 100%;
   }
 
 </style>
