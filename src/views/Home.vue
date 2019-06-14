@@ -8,61 +8,13 @@
       </div>
       <div class="row">
         <div class="col-12 Home__call-to-action-column">
-          <h1 class="Home__call-to-action">Open Source ordering system for small tea businesses</h1>
-          <b-form>
+          <h1 class="d-block d-md-none Home__call-to-action">Open Source ordering system for small tea businesses</h1>
+          <h1 class="d-none d-md-block Home__call-to-content">Boost online sales and reduce wait with Bobalicious</h1>
+          <h5 class="d-none d-md-block Home__call-to-subcontent">The first open source and secure ordering system for small tea businesses</h5>
+          <b-form class="Home__form">
             <b-form-input class="Home__input--email" placeholder="Enter your email address"></b-form-input>
             <b-button class="Home__submit-btn" type="submit">SIGN UP FOR BETA</b-button>
           </b-form>
-          <p class="d-sm-block d-none Home__call-to-content">Waiting in long queues has never been easier! Order through this app and pick up your drink on arrival!</p>
-        </div>
-      </div>
-      <div class="row d-sm-block d-none">
-        <div class="col-sm-4">
-            <b-card
-              title="Fast pick up"
-              img-src="https://picsum.photos/600/300/?image=25"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 20rem;"
-              class="mb-2"
-            >
-              <b-card-text>Skip the lines and pick up on arrival</b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-        </div>
-        <div class="col-sm-4">
-          <div>
-          <b-card
-            title="Free to use"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
-          >
-            <b-card-text>For local tea businesses by developers who love boba</b-card-text>
-
-            <b-button href="#" variant="primary">Go somewhere</b-button>
-          </b-card>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <b-card
-            title="Safe, secure payment"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
-          >
-            <b-card-text>Secured with Stripe, the best software platform for handling online payments</b-card-text>
-
-            <b-button href="#" variant="primary">Go somewhere</b-button>
-          </b-card>
         </div>
       </div>
     </div>
@@ -70,7 +22,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'home',
   components: {
@@ -90,31 +41,50 @@ export default {
     height: 100vh;
   }
 
-  .Home__call-to-action, .Home__coming-soon-title, .Home__company-name {
-    color: #FFF;
+  .Home__call-to-action, .Home__coming-soon-title, .Home__company-name, .Home__call-to-content, .Home__call-to-subcontent {
+    color: $text-color;
+    text-align: center;
+  }
+
+  .Home__company-name {
+    font-weight: $bold;
+    letter-spacing: 1.4px;
   }
 
   .Home__call-to-action {
     letter-spacing: 1.16px;
     text-align: center;
-    font-weight: 400;
+    font-weight: $normal;
   }
 
-  .Home__company-name {
-    font-weight: 700;
-    letter-spacing: 1.4px;
+  .Home__call-to-subcontent {
+    font-weight: $normal;
+  }
+
+  // Form
+  .Home__input--email, .Home__submit-btn {
+    width: 100%;
+    display: block;
   }
 
   .Home__input--email {
     margin-top: 24px;
-    font-weight: 500;
+    font-weight: $medium;
   }
 
   .Home__submit-btn {
-    font-weight: 500;
+    font-weight: $medium;
     letter-spacing: 0.88px;
     margin-top: 8px;
     width: 100%;
+  }
+
+  @include desktop {
+    .Home__input--email, .Home__submit-btn {
+      max-width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
 </style>
